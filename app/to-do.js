@@ -71,9 +71,3 @@ tasks.push(new WorkTask(today, "Update blog.", "High", diane));
 tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium", thor));
 tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low", loki));
 console.log(tasks);
-
-$(document).ready(function(){
-  tasks.forEach(function(i){
-    $('#task').append("<li>" + i.description + "<ul><li> Priority: " + i.priority +"</li></ul></li>");
-  });
-})

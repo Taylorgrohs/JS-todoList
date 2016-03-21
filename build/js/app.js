@@ -115,3 +115,23 @@ for (var _i = 0, thorTasks_1 = thorTasks; _i < thorTasks_1.length; _i++) {
     var task = thorTasks_1[_i];
     console.log(task);
 }
+$(document).ready(function () {
+    $('#tayisright').submit(function (event) {
+        event.preventDefault();
+        var selected = $('select#task-party').val();
+        $('#task').empty();
+        tasks.forEach(function (i) {
+            if (i.constructor.name === selected) {
+                $('#task').append("<li>Task: " + i.description + " Priority:" + i.priority + "</li>");
+            }
+            else {
+                if (i.priority === selected) {
+                    $('#task').append("<li>Task: " + i.description + " Priority:" + i.priority + "</li>");
+                }
+            }
+        });
+    });
+    // tasks.forEach(function(i){
+    //   $('#task').append("<li>" + i.constructor.name + "</ul><ul><li>" + i.description + "<ul><li> Priority: " + i.priority +"</li></ul></li>");
+    // });
+});
